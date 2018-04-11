@@ -216,3 +216,21 @@ Notice that the first two metrics list Hawaii as the second worst gerrymandered 
 
 Convex-Hull seems to do the best job, at least on the surface through this initial analysis. We should investigate these metrics further at a district level, with a special focus on the Convex-Hull Ratio. 
 
+
+Let's import some data that contains information on the district level:
+
+```{r}
+
+districtGerrymander <- read.csv("https://raw.githubusercontent.com/cicero-data/compactness-stats/master/2014-us/state_lower.csv")
+
+```
+
+This data has all of the information and calculations for all four metrics (averages) we described above for each state. 
+
+
+
+
+
+
+
+
