@@ -1,0 +1,95 @@
+---
+title: "Preliminary Data Analysis"
+author: "Nick McMullen"
+date: "April 10, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+library(tidyverse)
+library(fiftystater)
+
+data("fifty_states")
+
+stateGerrymander <- read.csv("Data/StateGerrymandering.csv")
+
+```
+
+The stateGerrymander data imported above has information on the average compactness and spread metrics for each U.S. state that has more than one congressional district. 
+
+
+Explore:
+
+1. Compactness
+
+- Polsby-Popper: this measure is a ratio of the area of the district to the area of the circle whose circumference is equal to the perimeter of the district. 
+
+
+- Schwartzberg: this measure is a ratio of the perimeter of the district to the circumference of the circle whose area is equal to the area of the district. 
+
+2. Spread
+
+- Area/Convex Hull: this measure is a ratio of the area of the district to the area of the minimum convex polygod that can enclose the district.
+
+- Reock: this measure is the ratio of the area of the district to the area of the minimum spanning circle that can enclose the district. 
+
+
+Clean the data:
+
+```{r}
+
+stateGerrymander <- stateGerrymander %>%
+  mutate(Polsby.Popper = Polsby.Popper/100) %>%
+  mutate(Schwartzberg = Schwartzberg/100) %>%
+  mutate(Convex.Hull = Convex.Hull/100) %>%
+  mutate(Reock = Reock/100) 
+
+
+stateGerrymander$State <- as.character(stateGerrymander$State)
+
+stateGerrymander <- stateGerrymander %>%
+  rbind(c("Alaska", 1, 1, 1, 1, 1)) %>%
+  rbind(c("Montana", 1, 1, 1, 1, 1)) %>%
+  rbind(c("Delaware", 1, 1, 1, 1, 1)) %>%
+  rbind(c("North Dakota", 1, 1, 1, 1, 1)) %>%
+  rbind(c("South Dakota", 1, 1, 1, 1, 1)) %>%
+  rbind(c("Vermont", 1, 1, 1, 1, 1)) %>%
+  rbind(c("Wyoming", 1, 1, 1, 1, 1)) 
+
+stateGerrymander$statelower <- tolower(stateGerrymander$State)
+
+stateGerrymander$statelower <- as.factor(stateGerrymander$statelower)
+  
+
+```
+
+
+Exploratory plot:
+
+```{r}
+
+ggplot(stateGerrymander, aes(x=State, y=Polsby.Popper))+ 
+  geom_bar(stat="identity") + 
+  theme(axis.text.x = element_text(angle=90))
+
+
+ggplot(stateGerrymander, aes(map_id = statelower)) + 
+  geom_map(aes(fill=Polsby.Popper), map=fifty_states) + 
+  expand_limits(x=fifty_states$long, y=fifty_states$lat) + 
+  coord_map() + 
+  scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x = "", y= "") + 
+  theme(legend.position="bottom", panel.background = element_blank())
+
+
+```
+
+
+***Can't get scale to be continuous but this is a good start.***
+
+```
