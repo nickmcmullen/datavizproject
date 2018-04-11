@@ -92,4 +92,6 @@ ggplot(stateGerrymander, aes(map_id = statelower)) +
 
 ***Can't get scale to be continuous but this is a good start.***
 
+good start. 
+
 ```
