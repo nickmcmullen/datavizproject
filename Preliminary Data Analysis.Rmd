@@ -237,7 +237,6 @@ http://cdmaps.polisci.ucla.edu/tut/mapping_congress_in_R.html
 
 ```{r}
 
-
 get_congress_map <- function(cong=113) {
   tmp_file <- tempfile()
   tmp_dir  <- tempdir()
@@ -255,6 +254,39 @@ Then we grab data from the 114th Congress (2015-2017):
 ```{r}
 
 cd114 <- get_congress_map(114)
+
+```
+
+
+```{r}
+
+congressDistrictGerrymander <- read.csv("Data/congressDistrictGerrymander.csv")
+
+congressDistrictGerrymander <- congressDistrictGerrymander %>%
+  mutate(Polsby.Popper = compactness) %>%
+  select(district, Polsby.Popper) 
+
+congressDistrictGerrymander$Polsby.Popper[1] = 1
+congressDistrictGerrymander$Polsby.Popper[87] = 1
+congressDistrictGerrymander$Polsby.Popper[233] = 1
+congressDistrictGerrymander$Polsby.Popper[247] = 1
+congressDistrictGerrymander$Polsby.Popper[352] = 1
+congressDistrictGerrymander$Polsby.Popper[413] = 1
+congressDistrictGerrymander$Polsby.Popper[435] = 1
+
+
+```
+
+Source: https://raw.githubusercontent.com/jeffreyshen19/Is-My-District-Gerrymandered/master/data/compactness.csv
+
+
+Look at the 5 worst districts for Polsby-Popper:
+
+```{r}
+
+congressDistrictGerrymander %>%
+  arrange(Polsby.Popper) %>%
+  head(10)
 
 ```
 
