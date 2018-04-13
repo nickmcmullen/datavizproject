@@ -292,6 +292,16 @@ congressDistrictGerrymander %>%
 
 
 
+We can calculate our own metrics or the standard metrics from this raw Congressional district data that contains the area, perimeter, and distance from center information. 
+
+```{r}
+
+congressDistrictRaw <- read.csv("Data/congressDistrictDataRaw.csv")
+
+```
+
+
+
 ##Analysis on State House District Level
 
 
