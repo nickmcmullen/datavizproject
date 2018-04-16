@@ -298,7 +298,21 @@ We can calculate our own metrics or the standard metrics from this raw Congressi
 
 congressDistrictRaw <- read.csv("Data/congressDistrictDataRaw.csv")
 
+#Remove rows that are not congressional districts
+
+congressDistrictRaw <- congressDistrictRaw %>%
+  filter(!is.na(district_name))
+
+#Calculate important metrics - unable to calculate Convex Hull and Reock w/o GIS - also, area and perimeter are in different units -- not sure which units -- this makes Polsby Popper and Schwartzberg calculations inaccurate. 
+
+congressDistrictRaw <- congressDistrictRaw %>%
+  mutate(Polsby.Popper = (4*pi*area / (perimeter^2))) %>%
+  mutate(Schwartzberg = (2*pi*sqrt(area/pi)) / (perimeter))
+
 ```
+
+
+Polsby-Popper District Map
 
 
 
@@ -313,10 +327,10 @@ districtGerrymander <- read.csv("Data/districtGerrymander.csv")
 
 ```
 
-Data from: https://raw.githubusercontent.com/cicero-data/compactness-stats/master/2014-us/state_lower.csv
 
 This data has all of the information and calculations for all four metrics (averages) we described above for each state. 
 
+Data from: https://raw.githubusercontent.com/cicero-data/compactness-stats/master/2014-us/state_lower.csv
 
 
 
