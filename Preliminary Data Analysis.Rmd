@@ -27,7 +27,6 @@ Data from: http://www.governing.com/gov-data/politics/gerrymandered-congressiona
 
 The stateGerrymander data imported above has information on the average compactness and spread metrics for each U.S. state that has more than one congressional district. 
 
-
 Explore:
 
 1. Compactness
@@ -98,7 +97,7 @@ polsby_popper_map <- ggplot(stateGerrymander, aes(map_id = statelower)) +
   scale_x_continuous(breaks=NULL) + 
   scale_y_continuous(breaks=NULL) + labs(x = "", y= "") + 
   theme(legend.position="bottom", panel.background = element_blank()) + 
-  labs(title="Mean Polsby-Popper Ratio By State")
+  labs(title="Mean Polsby-Popper Ratio")
 
 polsby_popper_map
 
@@ -117,7 +116,7 @@ schwartzberg_map <- ggplot(stateGerrymander, aes(map_id = statelower)) +
   scale_x_continuous(breaks=NULL) + 
   scale_y_continuous(breaks=NULL) + labs(x = "", y= "") + 
   theme(legend.position="bottom", panel.background = element_blank()) + 
-  labs(title="Mean Schwartzberg Ratio By State")
+  labs(title="Mean Schwartzberg Ratio")
 
 schwartzberg_map
 
@@ -135,7 +134,7 @@ convex_hull_map <- ggplot(stateGerrymander, aes(map_id = statelower)) +
   scale_x_continuous(breaks=NULL) + 
   scale_y_continuous(breaks=NULL) + labs(x = "", y= "") + 
   theme(legend.position="bottom", panel.background = element_blank()) + 
-  labs(title="Mean Convex-Hull Ratio By State")
+  labs(title="Mean Convex-Hull Ratio")
 
 convex_hull_map
 
@@ -153,7 +152,7 @@ reock_map <- ggplot(stateGerrymander, aes(map_id = statelower)) +
   scale_x_continuous(breaks=NULL) + 
   scale_y_continuous(breaks=NULL) + labs(x = "", y= "") + 
   theme(legend.position="bottom", panel.background = element_blank()) + 
-  labs(title="Mean Reock Ratio By State")
+  labs(title="Mean Reock Ratio")
 
 reock_map
 
@@ -164,7 +163,7 @@ All 4 plots together
 
 ```{r}
 
-grid.arrange(polsby_popper_map, schwartzberg_map, convex_hull_map, reock_map, nrow=2)
+grid.arrange(polsby_popper_map, schwartzberg_map, convex_hull_map, reock_map, nrow=2, bottom="Figure 1")
 
 ```
 
@@ -310,6 +309,8 @@ congressDistrictRaw <- congressDistrictRaw %>%
   mutate(Schwartzberg = (2*pi*sqrt(area/pi)) / (perimeter))
 
 ```
+
+data from: https://blog.modeanalytics.com/finding-the-most-gerrymandered-districts/
 
 
 Polsby-Popper District Map
