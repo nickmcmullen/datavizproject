@@ -1,0 +1,201 @@
+---
+title: "FP 2"
+author: ""
+date: "April 24, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+
+library(tidyverse)
+library(fiftystater)
+library(gridExtra)
+library(sf)
+library(ggmap)
+
+```
+
+##Names
+
+Lynda Chao, Nick McMullen, Justin Reis-Henrie, Hannah Schumway
+
+##Workflow
+
+- Hannah and Lynda: working with shapefiles and visualizations in GIS
+- Nick and Justin: working with visualizations and CSV data in RStudio
+- All together: compiling work into shared Google Drive poster
+
+- Meetings: Tuesday/Thursday at 11:30 AM
+
+- The shared RMD will be compiled in a Github repository
+
+##Topic and Research Questions
+
+\textbf{Topic:} Gerrymandering Congressional Districts
+
+\textbf{Research Questions:}
+- 
+
+
+##Data
+
+1. Average district gerrymandering (compactness and spread) metrics 
+
+- Columns: State, Number of Districts, Polsby-Popper, Schwartzberg, Convex-Hull, Reock
+- Limitations: data is on average by state and not on the Congressional District level
+- Dimensions: 43 observations of 6 variables (did some data cleaning to add in states that only have one Congressional District)
+- Most recent data for Congressional Districts
+
+source: http://www.governing.com/gov-data/politics/gerrymandered-congressional-districts-compactness-by-state.html
+
+```{r}
+
+stateGerrymander <- read.csv("Data/StateGerrymandering.csv")
+
+stateGerrymander <- stateGerrymander %>%
+  mutate(Polsby.Popper = as.numeric(Polsby.Popper/100)) %>%
+  mutate(Schwartzberg = as.numeric(Schwartzberg/100)) %>%
+  mutate(Convex.Hull = as.numeric(Convex.Hull/100)) %>%
+  mutate(Reock = as.numeric(Reock/100)) 
+
+
+stateGerrymander$State <- as.character(stateGerrymander$State)
+
+stateGerrymander <- stateGerrymander %>%
+  rbind(c("Alaska", 1, 1, 1, 1, 1)) %>%
+  rbind(c("Montana", 1, 1, 1, 1, 1)) %>%
+  rbind(c("Delaware", 1, 1, 1, 1, 1)) %>%
+  rbind(c("North Dakota", 1, 1, 1, 1, 1)) %>%
+  rbind(c("South Dakota", 1, 1, 1, 1, 1)) %>%
+  rbind(c("Vermont", 1, 1, 1, 1, 1)) %>%
+  rbind(c("Wyoming", 1, 1, 1, 1, 1)) 
+
+stateGerrymander$statelower <- tolower(stateGerrymander$State)
+
+stateGerrymander$Polsby.Popper <- as.numeric(stateGerrymander$Polsby.Popper)
+stateGerrymander$Schwartzberg <- as.numeric(stateGerrymander$Schwartzberg)
+stateGerrymander$Convex.Hull <- as.numeric(stateGerrymander$Convex.Hull)
+stateGerrymander$Reock <- as.numeric(stateGerrymander$Reock)
+
+```
+
+
+2. Congressional District Shapefile for 115th Congress 
+
+- Not traditional data: we are working to attach gerrymander indices to the shapefile and visualize that way 
+- Most recent data for Congressional Districts
+- Source: US Census (census.gov)
+
+
+3. Congressional District Compactness Data:
+
+- PROBLEM: Doesn't have StateID or DistrictID to join.
+
+```{r}
+
+cdCompact <- read.csv("https://raw.githubusercontent.com/jeffreyshen19/Is-My-District-Gerrymandered/master/data/master.csv")
+
+```
+
+
+3. State Legislative Districts 
+
+- Columns: STATEFP, State, SLDLST, GEOID, NAMELSAD, Area, Perimeter, Polsby.Popper, Schwartzberg, Area.Convex.Hull, Reock
+- Limitations: data is from 2014 not from most recent redraw of state legislature districts 
+- Dimensions: 4825 observations 
+- Source: https://raw.githubusercontent.com/cicero-data/compactness-stats/master/2014-us/state_lower.csv
+
+
+
+##Initial Visualizations
+
+Research Question 1: State level gerrymandering indices
+
+
+```{r}
+
+ggplot(stateGerrymander, aes(x=State, y=Polsby.Popper))+ 
+  geom_bar(stat="identity") + 
+  theme(axis.text.x = element_text(angle=90))
+
+
+polsby_popper_map <- ggplot(stateGerrymander, aes(map_id = statelower)) + 
+  geom_map(aes(fill=Polsby.Popper), map=fifty_states) + 
+  expand_limits(x=fifty_states$long, y=fifty_states$lat) + 
+  coord_map() + 
+  scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x = "", y= "") + 
+  theme(legend.position="bottom", panel.background = element_blank()) + 
+  labs(title="Mean Polsby-Popper Ratio")
+
+
+```
+
+
+Schwartzberg
+
+```{r}
+
+schwartzberg_map <- ggplot(stateGerrymander, aes(map_id = statelower)) + 
+  geom_map(aes(fill=Schwartzberg), map=fifty_states) + 
+  expand_limits(x=fifty_states$long, y=fifty_states$lat) + 
+  coord_map() + 
+  scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x = "", y= "") + 
+  theme(legend.position="bottom", panel.background = element_blank()) + 
+  labs(title="Mean Schwartzberg Ratio")
+
+
+```
+
+
+Convex Hull Map
+
+```{r}
+
+convex_hull_map <- ggplot(stateGerrymander, aes(map_id = statelower)) + 
+  geom_map(aes(fill=Convex.Hull), map=fifty_states) + 
+  expand_limits(x=fifty_states$long, y=fifty_states$lat) + 
+  coord_map() + 
+  scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x = "", y= "") + 
+  theme(legend.position="bottom", panel.background = element_blank()) + 
+  labs(title="Mean Convex-Hull Ratio")
+
+
+```
+
+
+Reock Ratio Map
+
+```{r}
+
+reock_map <- ggplot(stateGerrymander, aes(map_id = statelower)) + 
+  geom_map(aes(fill=Reock), map=fifty_states) + 
+  expand_limits(x=fifty_states$long, y=fifty_states$lat) + 
+  coord_map() + 
+  scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x = "", y= "") + 
+  theme(legend.position="bottom", panel.background = element_blank()) + 
+  labs(title="Mean Reock Ratio")
+
+```
+
+
+All 4 plots together
+
+```{r}
+
+grid.arrange(polsby_popper_map, schwartzberg_map, convex_hull_map, reock_map, nrow=2, bottom="Figure 1")
+
+```
+
+
+
+
+
