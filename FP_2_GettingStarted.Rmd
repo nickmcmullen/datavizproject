@@ -22,7 +22,7 @@ library(ggmap)
 
 ##Names
 
-Lynda Chao, Nick McMullen, Justin Reis-Henrie, Hannah Schumway
+Lynda Chao, Nick McMullen, Justin Reis-Henrie, Hannah Shumway
 
 ##Workflow
 

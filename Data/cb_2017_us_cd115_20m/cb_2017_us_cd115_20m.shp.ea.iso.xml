@@ -6,18 +6,18 @@
                          xmlns:gml="http://www.opengis.net/gml/3.2"
                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                          xmlns:gfc="http://www.isotc211.org/2005/gfc"
-                         xsi:schemaLocation="http://www.isotc211.org/2005/gmi http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd">
+                         xsi:schemaLocation="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/gfc/featureCataloging.xsd http://www.isotc211.org/2005/gfc">
    <gmx:name>
-      <gco:CharacterString>Feature Catalog for the  115th Congressional District National</gco:CharacterString>
+      <gco:CharacterString>Feature Catalog for the 2017 United States 1:20,000,000 Cartographic Boundary File</gco:CharacterString>
    </gmx:name>
    <gmx:scope>
-      <gco:CharacterString>The 115th Congressional District National shapefile contains the attributes for the 435 areas from which people are elected to the U.S. House of Representatives.</gco:CharacterString>
+      <gco:CharacterString>The 115th Congressional Districts at a scale of 1:20,000,000</gco:CharacterString>
    </gmx:scope>
    <gmx:versionNumber>
-      <gco:CharacterString>2016</gco:CharacterString>
+      <gco:CharacterString>cb_2017_cd115_20m</gco:CharacterString>
    </gmx:versionNumber>
    <gmx:versionDate>
-      <gco:Date>2016-06-01</gco:Date>
+      <gco:Date>2018-03</gco:Date>
    </gmx:versionDate>
    <gmx:language>
       <gco:CharacterString>eng</gco:CharacterString>
@@ -28,20 +28,20 @@
                                codeSpace="004">utf8
             </gmd:MD_CharacterSetCode>
    </gmx:characterSet>
-   <gfc:producer xlink:href="https://www.ngdc.noaa.gov/docucomp/c5ceb003-1ed6-4126-8a16-bc08ce8fc267"
-                 xlink:title="U.S. Department of Commerce, U.S. Census Bureau, Geography Division, Spatial Data Collection and Products Branch"/>
+   <gfc:producer xlink:href="https://www.ngdc.noaa.gov/docucomp/1df27e57-4768-42de-909b-52f530601fba"
+                 xlink:title="U.S Department of Commerce, U.S Census Bureau, Geographic Customer Services Branch"/>
    <gfc:featureType>
       <gfc:FC_FeatureType>
          <gfc:typeName>
-            <gco:LocalName>CD115.shp</gco:LocalName>
+            <gco:LocalName>cb_2017_us_cd115_20m.shp</gco:LocalName>
          </gfc:typeName>
          <gfc:definition>
-            <gco:CharacterString>115th Congressional District National</gco:CharacterString>
+            <gco:CharacterString>115th Congressional Districts (national)</gco:CharacterString>
          </gfc:definition>
          <gfc:isAbstract>
             <gco:Boolean>false</gco:Boolean>
          </gfc:isAbstract>
-         <gfc:featureCatalogue uuidref="2016_cd115.ea.iso.xml"/>
+         <gfc:featureCatalogue uuidref="2017_cd115_20m.ea.iso.xml"/>
          <gfc:carrierOfCharacteristics>
             <gfc:FC_FeatureAttribute>
                <gfc:memberName>
@@ -90,18 +90,6 @@
                <gfc:listedValue>
                   <gfc:FC_ListedValue>
                      <gfc:label>
-                        <gco:CharacterString>98</gco:CharacterString>
-                     </gfc:label>
-                     <gfc:definition>
-                        <gco:CharacterString>Non-Voting Delegate</gco:CharacterString>
-                     </gfc:definition>
-                     <gfc:definitionReference xlink:title="U.S. Census Bureau"
-                                              xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-                  </gfc:FC_ListedValue>
-               </gfc:listedValue>
-               <gfc:listedValue>
-                  <gfc:FC_ListedValue>
-                     <gfc:label>
                         <gco:CharacterString>01 to 53</gco:CharacterString>
                      </gfc:label>
                      <gfc:definition>
@@ -114,11 +102,45 @@
                <gfc:listedValue>
                   <gfc:FC_ListedValue>
                      <gfc:label>
-                        <gco:CharacterString>ZZ</gco:CharacterString>
+                        <gco:CharacterString>98</gco:CharacterString>
                      </gfc:label>
                      <gfc:definition>
-                        <gco:CharacterString>Congressional District Not Defined</gco:CharacterString>
+                        <gco:CharacterString>Non-Voting Delegate</gco:CharacterString>
                      </gfc:definition>
+                     <gfc:definitionReference xlink:title="U.S. Census Bureau"
+                                              xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>99</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:definition>
+                        <gco:CharacterString>No Representation</gco:CharacterString>
+                     </gfc:definition>
+                     <gfc:definitionReference xlink:title="U.S. Census Bureau"
+                                              xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>AFFGEOID</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>American FactFinder summary level code + geovariant code + '00US' + GEOID</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality gco:nilReason="unknown"/>
+               <gfc:definitionReference xlink:title="U.S. Census Bureau"
+                                        xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>American FactFinder geographic identifier</gco:CharacterString>
+                     </gfc:label>
                      <gfc:definitionReference xlink:title="U.S. Census Bureau"
                                               xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
                   </gfc:FC_ListedValue>
@@ -139,31 +161,10 @@
                <gfc:listedValue>
                   <gfc:FC_ListedValue>
                      <gfc:label>
-                        <gco:CharacterString>The GEOID attribute is a concatenation of the state FIPS code followed by the CD FIPS code. No spaces are allowed between the two codes. The State FIPS code is taken from "National Standard Codes (ANSI INCITS 38-2009), Federal Information Processing Series (FIPS) - States". The CD FIPS code is taken from "National Standard Codes (ANSI INCITS 455-2009), Federal Information Processing Series (FIPS) - Congressional Districts".</gco:CharacterString>
+                        <gco:CharacterString>The GEOID attribute is a concatenation of the state FIPS code followed by the CD FIPS code. No spaces are allowed between the two codes. The state FIPS code is taken from "National Standard Codes (ANSI INCITS 38-2009), Federal Information Processing Series (FIPS) - States". The CD FIPS code is taken from "National Standard Codes (ANSI INCITS 455-2009), Federal Information Processing Series (FIPS) - Congressional Districts".</gco:CharacterString>
                      </gfc:label>
                      <gfc:definitionReference xlink:title="U.S. Census Bureau"
                                               xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-                  </gfc:FC_ListedValue>
-               </gfc:listedValue>
-            </gfc:FC_FeatureAttribute>
-         </gfc:carrierOfCharacteristics>
-         <gfc:carrierOfCharacteristics>
-            <gfc:FC_FeatureAttribute>
-               <gfc:memberName>
-                  <gco:LocalName>NAMELSAD</gco:LocalName>
-               </gfc:memberName>
-               <gfc:definition>
-                  <gco:CharacterString>Current name and the translated legal/statistical area description for congressional district</gco:CharacterString>
-               </gfc:definition>
-               <gfc:cardinality gco:nilReason="unknown"/>
-               <gfc:definitionReference xlink:title="U.S. Census Bureau"
-                                        xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-               <gfc:listedValue>
-                  <gfc:FC_ListedValue>
-                     <gfc:label gco:nilReason="inapplicable"/>
-                     <gfc:definition>
-                        <gco:CharacterString>Use values from the CD115FP field and the translated legal/statistical area description code for congressional district that appears in LSAD</gco:CharacterString>
-                     </gfc:definition>
                   </gfc:FC_ListedValue>
                </gfc:listedValue>
             </gfc:FC_FeatureAttribute>
@@ -179,18 +180,6 @@
                <gfc:cardinality gco:nilReason="unknown"/>
                <gfc:definitionReference xlink:title="U.S. Census Bureau"
                                         xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-               <gfc:listedValue>
-                  <gfc:FC_ListedValue>
-                     <gfc:label>
-                        <gco:CharacterString>00</gco:CharacterString>
-                     </gfc:label>
-                     <gfc:definition>
-                        <gco:CharacterString>Blank</gco:CharacterString>
-                     </gfc:definition>
-                     <gfc:definitionReference xlink:title="U.S. Census Bureau"
-                                              xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-                  </gfc:FC_ListedValue>
-               </gfc:listedValue>
                <gfc:listedValue>
                   <gfc:FC_ListedValue>
                      <gfc:label>
@@ -247,7 +236,7 @@
                   <gco:LocalName>CDSESSN</gco:LocalName>
                </gfc:memberName>
                <gfc:definition>
-                  <gco:CharacterString>Current congressional session code</gco:CharacterString>
+                  <gco:CharacterString>115th congressional district session code</gco:CharacterString>
                </gfc:definition>
                <gfc:cardinality gco:nilReason="unknown"/>
                <gfc:definitionReference xlink:title="U.S. Census Bureau"
@@ -269,56 +258,6 @@
          <gfc:carrierOfCharacteristics>
             <gfc:FC_FeatureAttribute>
                <gfc:memberName>
-                  <gco:LocalName>MTFCC</gco:LocalName>
-               </gfc:memberName>
-               <gfc:definition>
-                  <gco:CharacterString>MAF/TIGER feature class code</gco:CharacterString>
-               </gfc:definition>
-               <gfc:cardinality gco:nilReason="unknown"/>
-               <gfc:definitionReference xlink:title="U.S. Census Bureau"
-                                        xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-               <gfc:listedValue>
-                  <gfc:FC_ListedValue>
-                     <gfc:label>
-                        <gco:CharacterString>G5200</gco:CharacterString>
-                     </gfc:label>
-                     <gfc:definition>
-                        <gco:CharacterString>Congressional District</gco:CharacterString>
-                     </gfc:definition>
-                     <gfc:definitionReference xlink:title="U.S. Census Bureau"
-                                              xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-                  </gfc:FC_ListedValue>
-               </gfc:listedValue>
-            </gfc:FC_FeatureAttribute>
-         </gfc:carrierOfCharacteristics>
-         <gfc:carrierOfCharacteristics>
-            <gfc:FC_FeatureAttribute>
-               <gfc:memberName>
-                  <gco:LocalName>FUNCSTAT</gco:LocalName>
-               </gfc:memberName>
-               <gfc:definition>
-                  <gco:CharacterString>Current functional status</gco:CharacterString>
-               </gfc:definition>
-               <gfc:cardinality gco:nilReason="unknown"/>
-               <gfc:definitionReference xlink:title="U.S. Census Bureau"
-                                        xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-               <gfc:listedValue>
-                  <gfc:FC_ListedValue>
-                     <gfc:label>
-                        <gco:CharacterString>N</gco:CharacterString>
-                     </gfc:label>
-                     <gfc:definition>
-                        <gco:CharacterString>Nonfunctioning legal entity</gco:CharacterString>
-                     </gfc:definition>
-                     <gfc:definitionReference xlink:title="U.S. Census Bureau"
-                                              xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-                  </gfc:FC_ListedValue>
-               </gfc:listedValue>
-            </gfc:FC_FeatureAttribute>
-         </gfc:carrierOfCharacteristics>
-         <gfc:carrierOfCharacteristics>
-            <gfc:FC_FeatureAttribute>
-               <gfc:memberName>
                   <gco:LocalName>ALAND</gco:LocalName>
                </gfc:memberName>
                <gfc:definition>
@@ -327,6 +266,12 @@
                <gfc:cardinality gco:nilReason="unknown"/>
                <gfc:definitionReference xlink:title="U.S. Census Bureau"
                                         xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
+               <gfc:valueMeasurementUnit>
+                  <gml:DerivedUnit gml:id="areaInMetersSquaredforALAND">
+                     <gml:identifier codeSpace="area"/>
+                     <gml:derivationUnitTerm uom="m" exponent="2"/>
+                  </gml:DerivedUnit>
+               </gfc:valueMeasurementUnit>
                <gfc:listedValue>
                   <gfc:FC_ListedValue>
                      <gfc:label gco:nilReason="inapplicable"/>
@@ -349,56 +294,18 @@
                <gfc:cardinality gco:nilReason="unknown"/>
                <gfc:definitionReference xlink:title="U.S. Census Bureau"
                                         xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
+               <gfc:valueMeasurementUnit>
+                  <gml:DerivedUnit gml:id="areaInMetersSquaredforAWATER">
+                     <gml:identifier codeSpace="area"/>
+                     <gml:derivationUnitTerm uom="m" exponent="2"/>
+                  </gml:DerivedUnit>
+               </gfc:valueMeasurementUnit>
                <gfc:listedValue>
                   <gfc:FC_ListedValue>
                      <gfc:label gco:nilReason="inapplicable"/>
                      <gfc:definition>
                         <gco:CharacterString> Range Domain Minimum: 0
                                               Range Domain Maximum: 9,999,999,999,999</gco:CharacterString>
-                     </gfc:definition>
-                  </gfc:FC_ListedValue>
-               </gfc:listedValue>
-            </gfc:FC_FeatureAttribute>
-         </gfc:carrierOfCharacteristics>
-         <gfc:carrierOfCharacteristics>
-            <gfc:FC_FeatureAttribute>
-               <gfc:memberName>
-                  <gco:LocalName>INTPTLAT</gco:LocalName>
-               </gfc:memberName>
-               <gfc:definition>
-                  <gco:CharacterString>Current latitude of the internal point</gco:CharacterString>
-               </gfc:definition>
-               <gfc:cardinality gco:nilReason="unknown"/>
-               <gfc:definitionReference xlink:title="U.S. Census Bureau"
-                                        xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-               <gfc:listedValue>
-                  <gfc:FC_ListedValue>
-                     <gfc:label gco:nilReason="inapplicable"/>
-                     <gfc:definition>
-                        <gco:CharacterString> Range Domain Minimum: -90.000000
-                                              Range Domain Maximum: 90.000000</gco:CharacterString>
-                     </gfc:definition>
-                  </gfc:FC_ListedValue>
-               </gfc:listedValue>
-            </gfc:FC_FeatureAttribute>
-         </gfc:carrierOfCharacteristics>
-         <gfc:carrierOfCharacteristics>
-            <gfc:FC_FeatureAttribute>
-               <gfc:memberName>
-                  <gco:LocalName>INTPTLON</gco:LocalName>
-               </gfc:memberName>
-               <gfc:definition>
-                  <gco:CharacterString>Current longitude of the internal point</gco:CharacterString>
-               </gfc:definition>
-               <gfc:cardinality gco:nilReason="unknown"/>
-               <gfc:definitionReference xlink:title="U.S. Census Bureau"
-                                        xlink:href="http://www.ngdc.noaa.gov/docucomp/eb139e38-ee29-4d59-b157-5e874d4420c4"/>
-               <gfc:listedValue>
-                  <gfc:FC_ListedValue>
-                     <gfc:label gco:nilReason="inapplicable"/>
-                     <gfc:definition>
-                        <gco:CharacterString> Range Domain Minimum: -180.000000
-                                              Range Domain Maximum: 180.000000</gco:CharacterString>
                      </gfc:definition>
                   </gfc:FC_ListedValue>
                </gfc:listedValue>

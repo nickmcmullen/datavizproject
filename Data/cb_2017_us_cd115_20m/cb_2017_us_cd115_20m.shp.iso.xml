@@ -3,17 +3,19 @@
                  xmlns:gmd="http://www.isotc211.org/2005/gmd"
                  xmlns:gco="http://www.isotc211.org/2005/gco"
                  xmlns:gml="http://www.opengis.net/gml/3.2"
-                 xmlns:gmi="http://www.isotc211.org/2005/gmi">
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:gmi="http://www.isotc211.org/2005/gmi"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmi http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd">
    <gmd:fileIdentifier>
-      <gco:CharacterString>tl_2016_us_cd115.shp.iso.xml</gco:CharacterString>
+      <gco:CharacterString>cb_2017_us_cd115_20m.shp.iso.xml</gco:CharacterString>
    </gmd:fileIdentifier>
    <gmd:language>
       <gco:CharacterString>eng</gco:CharacterString>
    </gmd:language>
-   <gmd:characterSet>
+   <!--In the gmd_characterSet template!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!--><!-- CharSet UTF-8--><!-- In the when!!!!!!!!!!!!!!!!!--><gmd:characterSet>
       <gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"
-                               codeListValue="8859part1"
-                               codeSpace="006">8859part1</gmd:MD_CharacterSetCode>
+                               codeListValue="UTF-8"
+                               codeSpace="In the Metadata_Character_Set_CodeSpace template!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CharSet UTF-8004">UTF-8</gmd:MD_CharacterSetCode>
    </gmd:characterSet>
    <gmd:hierarchyLevel>
       <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode"
@@ -21,10 +23,10 @@
 dataset
 </gmd:MD_ScopeCode>
    </gmd:hierarchyLevel>
-   <gmd:contact xlink:href="https://www.ngdc.noaa.gov/docucomp/B04DFA5D-40CD-B677-E040-0AC8C5BB4473"
-                xlink:title=" U.S. Department of Commerce, U.S. Census Bureau, Geography Division, Spatial Data Collection and Products Branch(custodian)"/>
+   <gmd:contact xlink:href="https://www.ngdc.noaa.gov/docucomp/1df27e57-4768-42de-909b-52f530601fba"
+                xlink:title="U.S Department of Commerce, U.S Census Bureau, Geographic Customer Services Branch (point of Contact)"/>
    <gmd:dateStamp>
-      <gco:Date>2016-06-01</gco:Date>
+      <gco:Date>2018-03</gco:Date>
    </gmd:dateStamp>
    <gmd:metadataStandardName>
       <gco:CharacterString>ISO 19115 Geographic Information - Metadata </gco:CharacterString>
@@ -33,7 +35,7 @@ dataset
       <gco:CharacterString>2009-02-15 </gco:CharacterString>
    </gmd:metadataStandardVersion>
    <gmd:dataSetURI>
-      <gco:CharacterString>http://www2.census.gov/geo/tiger/TIGER2016/CD115/tl_2016_us_cd115.zip</gco:CharacterString>
+      <gco:CharacterString>https://www2.census.gov/geo/tiger/GENZ2017/shp/cb_2017_us_cd115_20m.zip</gco:CharacterString>
    </gmd:dataSetURI>
    <!-- This is the ptvctinf/sdtsterm/sdtstype from section 3 of the FGDC Standard (Spatial Data Organization) -->
 <gmd:spatialRepresentationInfo>
@@ -47,7 +49,7 @@ dataset
                                                 complex </gmd:MD_GeometricObjectTypeCode>
                </gmd:geometricObjectType>
                <gmd:geometricObjectCount>
-                  <gco:Integer>444</gco:Integer>
+                  <gco:Integer>437</gco:Integer>
                </gmd:geometricObjectCount>
             </gmd:MD_GeometricObjects>
          </gmd:geometricObjects>
@@ -60,25 +62,27 @@ dataset
             <gmd:RS_Identifier>
                <gmd:code gco:nilReason="unknown"/>
                <gmd:codeSpace>
-                  <gco:CharacterString>Federal Information Processing Series (FIPS), Geographic Names Information System (GNIS), and feature names.</gco:CharacterString>
+                  <gco:CharacterString>INCITS (formerly FIPS) codes</gco:CharacterString>
                </gmd:codeSpace>
             </gmd:RS_Identifier>
          </gmd:referenceSystemIdentifier>
       </gmd:MD_ReferenceSystem>
    </gmd:referenceSystemInfo>
+   <gmd:referenceSystemInfo xlink:href="https://www.ngdc.noaa.gov/docucomp/65f8b220-95ed-11e0-aa80-0800200c9a66"
+                            xlink:title="North American Datum 1983"/>
    <!--This part represents Section 1 of the FGDC Metadata Standard -->
 <gmd:identificationInfo>
       <gmd:MD_DataIdentification>
          <gmd:citation>
             <gmd:CI_Citation>
                <gmd:title>
-                  <gco:CharacterString>TIGER/Line Shapefile, 2016,  nation, U.S., 115th Congressional District National</gco:CharacterString>
+                  <gco:CharacterString>2017 Cartographic Boundary File, 115th Congressional Districts for United States, 1:20,000,000</gco:CharacterString>
                </gmd:title>
                <gmd:date>
                   <gmd:CI_Date>
 <!-- This is the publication date -->
 <gmd:date>
-                        <gco:Date>2016</gco:Date>
+                        <gco:Date>2018-03</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
@@ -88,11 +92,8 @@ dataset
                   </gmd:CI_Date>
                </gmd:date>
            
-                  <gmd:edition>
-                  <gco:CharacterString>2016</gco:CharacterString>
-               </gmd:edition>
-               <gmd:citedResponsibleParty xlink:href="https://www.ngdc.noaa.gov/docucomp/cf2b3bf2-5dd9-4fed-a495-1ddfb9a41de2 "
-                                          xlink:title="U.S. Department of Commerce, U.S. Census Bureau, Geography Division (Originator) "/>
+                  <gmd:citedResponsibleParty xlink:href="https://www.ngdc.noaa.gov/docucomp/ddd21bfb-2229-465b-95b2-bee36200b0e5"
+                                          xlink:title="originator - U.S. Department of Commerce, U.S. Census Bureau, Geography Division/Cartographic Products and Services Branch"/>
                <gmd:presentationForm>
                   <gmd:CI_PresentationFormCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode"
                                                codeListValue="mapDigital"/>
@@ -100,10 +101,12 @@ dataset
             </gmd:CI_Citation>
          </gmd:citation>
          <gmd:abstract>
-            <gco:CharacterString>The TIGER/Line shapefiles and related database files (.dbf) are an extract of selected geographic and cartographic information from the U.S. Census Bureau's Master Address File / Topologically Integrated Geographic Encoding and Referencing (MAF/TIGER) Database (MTDB). The MTDB represents a seamless national file with no overlaps or gaps between parts, however, each TIGER/Line shapefile is designed to stand alone as an independent data set, or they can be combined to cover the entire nation.  Congressional Districts are the 455 areas from which people are elected to the U.S. House of Representatives.  After the apportionment of congressional seats among the States based on census population counts, each State is responsible for establishing congressional districts for the purpose of electing representatives.  Each congressional district is to be as equal in population to all other congressional districts in a State as practicable.  The 115th Congress is seated from January 2015 to 2017. The TIGER/Line shapefiles for the District of Columbia, Puerto Rico, and the Island Areas (American Samoa, Guam, the Commonwealth of the Northern Mariana Islands, and the U.S. Virgin Islands) each contain a single record for the non-voting delegate district in these areas.  The boundaries of all other congressional districts are provided to the Census Bureau through the Redistricting Data Program (RDP).</gco:CharacterString>
+            <gco:CharacterString>The 2017 cartographic boundary shapefiles are simplified representations of selected geographic areas from the U.S. Census Bureau's Master Address File / Topologically Integrated Geographic Encoding and Referencing (MAF/TIGER) Database (MTDB). These boundary files are specifically designed for small-scale thematic mapping. When possible, generalization is performed with the intent to maintain the hierarchical relationships among geographies and to maintain the alignment of geographies within a file set for a given year. Geographic areas may not align with the same areas from another year. Some geographies are available as nation-based files while others are available only as state-based files.
+
+Congressional Districts are the 435 areas from which people are elected to the U.S. House of Representatives. After the apportionment of congressional seats among the states based on census population counts, each state is responsible for establishing congressional districts for the purpose of electing representatives. Each congressional district is to be as equal in population to all other congressional districts in a state as practicable. The 115th Congress is seated from January 2017 to 2019. The cartographic boundary files for the District of Columbia, Puerto Rico, and the Island Areas (American Samoa, Guam, the Commonwealth of the Northern Mariana Islands, and the U.S. Virgin Islands) each contain a single record for the non-voting delegate district in these areas. The boundaries of all other congressional districts reflect information provided to the Census Bureau by the states by May 1, 2016, and were in effect during the November 2016 election.</gco:CharacterString>
          </gmd:abstract>
          <gmd:purpose>
-            <gco:CharacterString>In order for others to use the information in the Census MAF/TIGER database in a geographic information system (GIS) or for other geographic applications, the Census Bureau releases to the public extracts of the database in the form of TIGER/Line Shapefiles.</gco:CharacterString>
+            <gco:CharacterString>These files were specifically created to support small-scale thematic mapping. To improve the appearance of shapes at small scales, areas are represented with fewer vertices than detailed TIGER/Line Shapefiles. Cartographic boundary files take up less disk space than their ungeneralized counterparts. Cartographic boundary files take less time to render on screen than TIGER/Line Shapefiles. You can join this file with table data downloaded from American FactFinder by using the AFFGEOID field in the cartographic boundary file. If detailed boundaries are required, please use the TIGER/Line Shapefiles instead of the generalized cartographic boundary files.</gco:CharacterString>
          </gmd:purpose>
          <gmd:status>
             <gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode"
@@ -111,8 +114,8 @@ dataset
                         completed
                     </gmd:MD_ProgressCode>
          </gmd:status>
-         <gmd:pointOfContact xlink:href="https://www.ngdc.noaa.gov/docucomp/c5ceb003-1ed6-4126-8a16-bc08ce8fc267"
-                             xlink:title="U.S. Department of Commerce, U.S. Census Bureau, Geography Division, Spatial Data Collection and Products Branch"/>
+         <gmd:pointOfContact xlink:href="https://www.ngdc.noaa.gov/docucomp/09b8253a-e2dc-4a6b-a905-11f1e0e87b3b"
+                             xlink:title="U.S Department of Commerce, U.S Census Bureau, Geographic Customer Services Branch (point of Contact)"/>
          <gmd:resourceMaintenance>
             <gmd:MD_MaintenanceInformation>
                <gmd:maintenanceAndUpdateFrequency>
@@ -124,29 +127,10 @@ dataset
                </gmd:maintenanceAndUpdateFrequency>
             </gmd:MD_MaintenanceInformation>
          </gmd:resourceMaintenance>
-         <gmd:graphicOverview>
-            <gmd:MD_BrowseGraphic>
-               <gmd:fileName>
-                  <gco:CharacterString>http://tigerweb.geo.census.gov/arcgis/services/TIGERweb/tigerWMS_Current/MapServer/WmsServer?REQUEST=GetMap&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;LAYERS=114th Congressional Districts,114th Congressional Districts Labels&amp;STYLES=default,default&amp;FORMAT=image/svg+xml&amp;BGCOLOR=0xFFFFFF&amp;TRANSPARENT=TRUE&amp;CRS=EPSG:4326&amp;BBOX=32.860571,-113.5097542,46.389131,-113.509754&amp;WIDTH=1090&amp;HEIGHT=751</gco:CharacterString>
-               </gmd:fileName>
-               <gmd:fileDescription>
-                  <gco:CharacterString>URL for the TigerWeb Web Mapping Service</gco:CharacterString>
-               </gmd:fileDescription>
-               <gmd:fileType>
-                  <gco:CharacterString>URL for the TigerWeb Web Mapping Service</gco:CharacterString>
-               </gmd:fileType>
-            </gmd:MD_BrowseGraphic>
-         </gmd:graphicOverview>
          <gmd:descriptiveKeywords>
             <gmd:MD_Keywords>
                <gmd:keyword>
-                  <gco:CharacterString>NGDA</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:keyword>
-                  <gco:CharacterString>Governmental Units and Administrative and Statistical Boundaries Theme</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:keyword>
-                  <gco:CharacterString>National Geospatial Data Asset</gco:CharacterString>
+                  <gco:CharacterString>Boundaries</gco:CharacterString>
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -156,7 +140,7 @@ dataset
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
                      <gmd:title>
-                        <gco:CharacterString>NGDA Portfolio Themes</gco:CharacterString>
+                        <gco:CharacterString>ISO 19115 Topic Categories</gco:CharacterString>
                      </gmd:title>
                      <gmd:date gco:nilReason="unknown"/>
                   </gmd:CI_Citation>
@@ -166,13 +150,22 @@ dataset
          <gmd:descriptiveKeywords>
             <gmd:MD_Keywords>
                <gmd:keyword>
-                  <gco:CharacterString>Nation</gco:CharacterString>
+                  <gco:CharacterString>2017</gco:CharacterString>
                </gmd:keyword>
                <gmd:keyword>
-                  <gco:CharacterString>Polygon</gco:CharacterString>
+                  <gco:CharacterString>SHP</gco:CharacterString>
                </gmd:keyword>
                <gmd:keyword>
-                  <gco:CharacterString>Congressional Districts</gco:CharacterString>
+                  <gco:CharacterString>Cartographic Boundary</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Congressional District</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Generalized</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>State</gco:CharacterString>
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -192,14 +185,10 @@ dataset
          <gmd:descriptiveKeywords>
             <gmd:MD_Keywords>
                <gmd:keyword>
-                  <gco:CharacterString>
-United States
-</gco:CharacterString>
+                  <gco:CharacterString>United States</gco:CharacterString>
                </gmd:keyword>
                <gmd:keyword>
-                  <gco:CharacterString>
-U.S.
-</gco:CharacterString>
+                  <gco:CharacterString>US</gco:CharacterString>
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -209,13 +198,7 @@ U.S.
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
                      <gmd:title>
-                        <gco:CharacterString>ANSI INCITS 38:2009 (Formerly FIPS 5-2), 
-                              ANSI INCITS 31:2009 (Formerly FIPS 6-4),ANSI 
-                              INCITS 454:2009 (Formerly FIPS 8-6), ANSI INCITS 
-                              455:2009(Formerly FIPS 9-1), ANSI INCITS 446:2008                           (Geographic Names Information System (GNIS))
- 
- 
-</gco:CharacterString>
+                        <gco:CharacterString>ISO 3166 Codes for the representation of names of countries and their subdivisions</gco:CharacterString>
                      </gmd:title>
                      <gmd:date gco:nilReason="unknown"/>
                   </gmd:CI_Citation>
@@ -238,8 +221,10 @@ U.S.
                   <gco:CharacterString> Access Constraints: None</gco:CharacterString>
                </gmd:otherConstraints>
                <gmd:otherConstraints>
-                  <gco:CharacterString> Use Constraints:The TIGER/Line Shapefile products are not copyrighted however TIGER/Line and Census TIGER are registered trademarks of the U.S. Census Bureau.  These products are free to use in a product or publication, however acknowledgement must be given to the U.S. Census Bureau as the source.
-The boundary information in the TIGER/Line Shapefiles are for statistical data collection and tabulation purposes only; their depiction and designation for statistical purposes does not constitute a determination of jurisdictional authority or rights of ownership or entitlement and they are not legal land descriptions.Coordinates in the TIGER/Line shapefiles have six implied decimal places, but the positional accuracy of these coordinates is not as great as the six decimal places suggest.</gco:CharacterString>
+                  <gco:CharacterString> Use Constraints:The intended display scale for this file is 1:20,000,000. This file should not be displayed at scales larger than 1:20,000,000.
+
+These products are free to use in a product or publication, however acknowledgement must be given to the U.S. Census Bureau as the source. The boundary information is for visual display at appropriate small scales only. Cartographic boundary files should not be used for geographic analysis including area or perimeter calculation. Files should not be used for geocoding addresses. Files should not be used for determining precise geographic area relationships.
+</gco:CharacterString>
                </gmd:otherConstraints>
             </gmd:MD_LegalConstraints>
          </gmd:resourceConstraints>
@@ -248,35 +233,46 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
             <gmd:MD_SpatialRepresentationTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
                                                   codeListValue="vector">vector</gmd:MD_SpatialRepresentationTypeCode>
          </gmd:spatialRepresentationType>
+         <gmd:spatialResolution>
+            <gmd:MD_Resolution>
+               <gmd:equivalentScale>
+                  <gmd:MD_RepresentativeFraction>
+                     <gmd:denominator>
+                        <gco:Integer>20000000</gco:Integer>
+                     </gmd:denominator>
+                  </gmd:MD_RepresentativeFraction>
+               </gmd:equivalentScale>
+            </gmd:MD_Resolution>
+         </gmd:spatialResolution>
          <gmd:language>
             <gco:CharacterString>eng</gco:CharacterString>
          </gmd:language>
-         <gmd:characterSet>
+         <!--In the Metadata_Character_Set template!!!!!!!!!!!!!!!!!!!!!!!!!!--><gmd:characterSet>
             <gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"
-                                     codeListValue="8859part1"
-                                     codeSpace="006">8859part1</gmd:MD_CharacterSetCode>
+                                     codeListValue="UTF-8"
+                                     codeSpace="In the Metadata_Character_Set_CodeSpace template!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CharSet UTF-8004"/>
          </gmd:characterSet>
          <gmd:topicCategory>
             <gmd:MD_TopicCategoryCode>boundaries</gmd:MD_TopicCategoryCode>
          </gmd:topicCategory>
          <gmd:environmentDescription>
-            <gco:CharacterString>The TIGER/Line shapefiles contain geographic data only and do not include display mapping software or statistical data.  For information on how to use the TIGER/Line shapefile data with specific software package users shall contact the company that produced the software.</gco:CharacterString>
+            <gco:CharacterString>The cartographic boundary files contain geographic data only and do not include display mapping software or statistical data. For information on how to use cartographic boundary file data with specific software package users shall contact the company that produced the software.</gco:CharacterString>
          </gmd:environmentDescription>
          <gmd:extent>
             <gmd:EX_Extent id="boundingExtent">
                <gmd:geographicElement>
                   <gmd:EX_GeographicBoundingBox id="boundingGeographicBoundingBox">
                      <gmd:westBoundLongitude>
-                        <gco:Decimal>-179.231086</gco:Decimal>
+                        <gco:Decimal>-179.174265</gco:Decimal>
                      </gmd:westBoundLongitude>
                      <gmd:eastBoundLongitude>
-                        <gco:Decimal>179.859681</gco:Decimal>
+                        <gco:Decimal>179.773922</gco:Decimal>
                      </gmd:eastBoundLongitude>
                      <gmd:southBoundLatitude>
-                        <gco:Decimal>-14.601813</gco:Decimal>
+                        <gco:Decimal>17.913769</gco:Decimal>
                      </gmd:southBoundLatitude>
                      <gmd:northBoundLatitude>
-                        <gco:Decimal>71.441059</gco:Decimal>
+                        <gco:Decimal>71.352561</gco:Decimal>
                      </gmd:northBoundLatitude>
                   </gmd:EX_GeographicBoundingBox>
                </gmd:geographicElement>
@@ -284,9 +280,9 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
                   <gmd:EX_TemporalExtent id="boundingTemporalExtent">
                      <gmd:extent>
                         <gml:TimePeriod gml:id="boundingTemporalExtentA">
-                           <gml:description>Publication Date</gml:description>
-                           <gml:beginPosition>2015-06</gml:beginPosition>
-                           <gml:endPosition>2016-05</gml:endPosition>
+                           <gml:description>publication date</gml:description>
+                           <gml:beginPosition>2018-03</gml:beginPosition>
+                           <gml:endPosition>2018-03</gml:endPosition>
                         </gml:TimePeriod>
                      </gmd:extent>
                   </gmd:EX_TemporalExtent>
@@ -301,19 +297,14 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
          <gmd:includedWithDataset>
             <gco:Boolean>true</gco:Boolean>
          </gmd:includedWithDataset>
-         <gmd:featureTypes>
-            <gco:LocalName codeSpace="unknown"> Congressional District </gco:LocalName>
-         </gmd:featureTypes>
          <gmd:featureCatalogueCitation>
             <gmd:CI_Citation>
                <gmd:title>
-                  <gco:CharacterString>Feature Catalog for the 2016 TIGER/Line Shapefile 115th Congressional District National</gco:CharacterString>
+                  <gco:CharacterString>Feature Catalog for the 2017 115th Congressional Districts 1:20,000,000 Cartographic Boundary File</gco:CharacterString>
                </gmd:title>
                <gmd:date>
                   <gmd:CI_Date>
-                     <gmd:date>
-                        <gco:Date>2016</gco:Date>
-                     </gmd:date>
+                     <gmd:date gco:nilReason="missing"/>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
                                              codeListValue="publication"
@@ -321,10 +312,8 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
-               <gmd:citedResponsibleParty xlink:href="https://www.ngdc.noaa.gov/docucomp/1df27e57-4768-42de-909b-52f530601fba"
-                                          xlink:title="U.S Department of Commerce, U.S Census Bureau, Geography Division (distributor)"/>
                <gmd:otherCitationDetails>
-                  <gco:CharacterString>http://meta.geo.census.gov/data/existing/decennial/GEO/GPMB/TIGERline/TIGER2016/cd115/tl_2016_cd115.shp.ea.iso.xml</gco:CharacterString>
+                  <gco:CharacterString>https://meta.geo.census.gov/data/existing/decennial/GEO/CPMB/boundary/2016cb/cd115_20m/2016_cd115_20m.ea.iso.xml</gco:CharacterString>
                </gmd:otherCitationDetails>
             </gmd:CI_Citation>
          </gmd:featureCatalogueCitation>
@@ -335,36 +324,18 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
          <gmd:distributionFormat>
             <gmd:MD_Format>
                <gmd:name>
-                  <gco:CharacterString>TGRSHP (compressed)</gco:CharacterString>
+                  <gco:CharacterString>SHP</gco:CharacterString>
                </gmd:name>
                <gmd:version gco:nilReason="unknown"/>
                <gmd:fileDecompressionTechnique>
-                  <gco:CharacterString>PK-ZIP, version 1.93 A or higher</gco:CharacterString>
+                  <gco:CharacterString>PK-ZIP, version 1.93A or higher</gco:CharacterString>
                </gmd:fileDecompressionTechnique>
             </gmd:MD_Format>
          </gmd:distributionFormat>
          <gmd:distributionFormat>
             <gmd:MD_Format>
                <gmd:name>
-                  <gco:CharacterString>html</gco:CharacterString>
-               </gmd:name>
-               <gmd:version gco:nilReason="unknown"/>
-            </gmd:MD_Format>
-         </gmd:distributionFormat>
-         <gmd:distributionFormat>
-            <gmd:MD_Format>
-               <gmd:name>
-                  <gco:CharacterString>WMS</gco:CharacterString>
-               </gmd:name>
-               <gmd:version>
-                  <gco:CharacterString>1.3.0</gco:CharacterString>
-               </gmd:version>
-            </gmd:MD_Format>
-         </gmd:distributionFormat>
-         <gmd:distributionFormat>
-            <gmd:MD_Format>
-               <gmd:name>
-                  <gco:CharacterString>REST</gco:CharacterString>
+                  <gco:CharacterString>HTML</gco:CharacterString>
                </gmd:name>
                <gmd:version gco:nilReason="unknown"/>
             </gmd:MD_Format>
@@ -372,14 +343,14 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
          <gmd:distributor>
             <gmd:MD_Distributor>
                <gmd:distributorContact xlink:href="https://www.ngdc.noaa.gov/docucomp/f48e4893-a57f-4f2b-ad5d-0cca1b34ec62"
-                                       xlink:title="U.S Department of Commerce, U.S Census Bureau, Geography Division, Spatial Data Collection and Products Branch (distributor)"/>
+                                       xlink:title="U.S Department of Commerce, U.S Census Bureau, Geography Division, Geographic Products Branch (distributor)"/>
                <gmd:distributionOrderProcess>
                   <gmd:MD_StandardOrderProcess>
                      <gmd:fees>
-                        <gco:CharacterString>The online copy of the TIGER/Line Shapefiles may be accessed without charge.</gco:CharacterString>
+                        <gco:CharacterString>The online cartographic boundary files may be downloaded without charge.</gco:CharacterString>
                      </gmd:fees>
                      <gmd:orderingInstructions>
-                        <gco:CharacterString>To obtain more information about ordering TIGER/Line Shapefiles visit http://www.census.gov/geo/www/tiger </gco:CharacterString>
+                        <gco:CharacterString>To obtain more information about ordering Cartographic Boundary Files visit https://www.census.gov/geo/www/tiger.</gco:CharacterString>
                      </gmd:orderingInstructions>
                   </gmd:MD_StandardOrderProcess>
                </gmd:distributionOrderProcess>
@@ -390,7 +361,7 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
                <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://www2.census.gov/geo/tiger/TIGER2016/CD115/tl_2016_us_cd115.zip</gmd:URL>
+                        <gmd:URL>https://www2.census.gov/geo/tiger/GENZ2017/shp/cb_2017_us_cd115_20m.zip</gmd:URL>
                      </gmd:linkage>
                      <gmd:name>
                         <gco:CharacterString>Shapefile Zip File</gco:CharacterString>
@@ -404,64 +375,14 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
                <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://www.census.gov/geo/maps-data/data/tiger-line.html</gmd:URL>
+                        <gmd:URL>https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html</gmd:URL>
                      </gmd:linkage>
                      <gmd:name>
-                        <gco:CharacterString>TIGER/Line® Shapefiles</gco:CharacterString>
+                        <gco:CharacterString>Cartographic Boundary Shapefiles</gco:CharacterString>
                      </gmd:name>
                      <gmd:description>
-                        <gco:CharacterString>Should be used for most mapping projects--this is our most comprehensive dataset. Designed for use with GIS (geographic information systems).</gco:CharacterString>
+                        <gco:CharacterString>Simplified representations of selected geographic areas from the Census Bureau's MAF/TIGER geographic database</gco:CharacterString>
                      </gmd:description>
-                  </gmd:CI_OnlineResource>
-               </gmd:onLine>
-            </gmd:MD_DigitalTransferOptions>
-         </gmd:transferOptions>
-         <gmd:transferOptions>
-            <gmd:MD_DigitalTransferOptions>
-               <gmd:onLine>
-                  <gmd:CI_OnlineResource>
-                     <gmd:linkage>
-                        <gmd:URL>http://tigerweb.geo.census.gov/arcgis/services/TIGERweb/tigerWMS_Current/MapServer/WmsServer?REQUEST=GetMap&amp;SERVICE=WMS&amp;VERSION=1.3.0 &amp;LAYERS=114th Congressional Districts,114th Congressional Districts Labels&amp;STYLES=default, default&amp;FORMAT=image/svg+xml&amp;BGCOLOR=0xFFFFFF&amp;TRANSPARENT=TRUE&amp;CRS=EPSG:4326 &amp;BBOX=32.860571,-113.5097542,46.389131,-113.509754&amp;WIDTH=891&amp;HEIGHT=751</gmd:URL>
-                     </gmd:linkage>
-                     <gmd:applicationProfile>
-                        <gco:CharacterString>http://opengis.net/spec/wms</gco:CharacterString>
-                     </gmd:applicationProfile>
-                     <gmd:name>
-                        <gco:CharacterString>TIGERweb/tigerWMS_Current (MapServer)</gco:CharacterString>
-                     </gmd:name>
-                     <gmd:description>
-                        <gco:CharacterString>This web mapping service contains the layer for 114th Congressional Districts. Since this layer displays at scales of 1:11,999,976 or greater, adjusting the BBox coordinates in the URL is necessary to get the desired area </gco:CharacterString>
-                     </gmd:description>
-                     <gmd:function>
-                        <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnlineFunctionCode"
-                                                   codeListValue="download">download
-                            </gmd:CI_OnLineFunctionCode>
-                     </gmd:function>
-                  </gmd:CI_OnlineResource>
-               </gmd:onLine>
-            </gmd:MD_DigitalTransferOptions>
-         </gmd:transferOptions>
-         <gmd:transferOptions>
-            <gmd:MD_DigitalTransferOptions>
-               <gmd:onLine>
-                  <gmd:CI_OnlineResource>
-                     <gmd:linkage>
-                        <gmd:URL>https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Legislative/MapServer</gmd:URL>
-                     </gmd:linkage>
-                     <gmd:applicationProfile>
-                        <gco:CharacterString>http://www.geoplatform.gov/spec/esri-map-rest</gco:CharacterString>
-                     </gmd:applicationProfile>
-                     <gmd:name>
-                        <gco:CharacterString>TIGERweb/Legislative (MapServer)</gco:CharacterString>
-                     </gmd:name>
-                     <gmd:description>
-                        <gco:CharacterString>This Rest Service contains the 115th Congressional layer</gco:CharacterString>
-                     </gmd:description>
-                     <gmd:function>
-                        <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnlineFunctionCode"
-                                                   codeListValue="download">download
-                            </gmd:CI_OnLineFunctionCode>
-                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
             </gmd:MD_DigitalTransferOptions>
@@ -481,13 +402,16 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
          </gmd:scope>
          <gmd:report>
             <gmd:DQ_CompletenessCommission>
+               <gmd:evaluationMethodDescription>
+                  <gco:CharacterString>The cartographic boundary files are generalized representations of extracts taken from the MAF/TIGER Database. Generalized boundary files are clipped to a simplified version of the U.S. outline. As a result, some off-shore areas may be excluded from the generalized files. Some small geographic areas, holes, or discontiguous parts of areas may not be included in generalized files if they are not visible at the target scale.</gco:CharacterString>
+               </gmd:evaluationMethodDescription>
                <gmd:result gco:nilReason="unknown"/>
             </gmd:DQ_CompletenessCommission>
          </gmd:report>
          <gmd:report>
             <gmd:DQ_CompletenessOmission>
                <gmd:evaluationMethodDescription>
-                  <gco:CharacterString>Data completeness of the TIGER/Line Shapefiles reflects the contents of the Census MAF/TIGER database at the time the TIGER/Line Shapefiles were created.</gco:CharacterString>
+                  <gco:CharacterString>The cartographic boundary files are generalized representations of extracts taken from the MAF/TIGER Database. Generalized boundary files are clipped to a simplified version of the U.S. outline. As a result, some off-shore areas may be excluded from the generalized files. Some small geographic areas, holes, or discontiguous parts of areas may not be included in generalized files if they are not visible at the target scale.</gco:CharacterString>
                </gmd:evaluationMethodDescription>
                <gmd:result gco:nilReason="unknown"/>
             </gmd:DQ_CompletenessOmission>
@@ -495,9 +419,9 @@ The boundary information in the TIGER/Line Shapefiles are for statistical data c
          <gmd:report>
             <gmd:DQ_ConceptualConsistency>
                <gmd:measureDescription>
-                  <gco:CharacterString>The Census Bureau performed automated tests to ensure logical consistency and limits of shapefiles.  Segments making up the outer and inner boundaries of a polygon tie end-to-end to completely enclose the area.  All polygons are tested for closure.
-The Census Bureau uses its internally developed geographic update system to enhance and modify spatial and attribute data in the Census MAF/TIGER database.  Standard geographic codes, such as FIPS codes for states, counties, municipalities, county subdivisions, places, American Indian/Alaska Native/Native Hawaiian areas, and congressional districts are used when encoding spatial entities.  The Census Bureau performed spatial data tests for logical consistency of the codes during the compilation of the original Census MAF/TIGER database files.  Most of the codes for geographic entities except states, counties, urban areas, Core Based Statistical Areas (CBSAs), American Indian Areas (AIAs), and congressional districts were provided to the Census Bureau by the USGS, the agency responsible for maintaining the Geographic Names Information System (GNIS).  Feature attribute information has been examined but has not been fully tested for consistency.
-For the TIGER/Line Shapefiles, the Point and Vector Object Count for the G-polygon SDTS Point and Vector Object Type reflects the number of records in the shapefile attribute table.  For multi-polygon features, only one attribute record exists for each multi-polygon rather than one attribute record per individual G-polygon component of the multi-polygon feature.  TIGER/Line Shapefile multi-polygons are an exception to the G-polygon object type classification.  Therefore, when multi-polygons exist in a shapefile, the object count will be less than the actual number of G-polygons.</gco:CharacterString>
+                  <gco:CharacterString>The Census Bureau performed automated tests to ensure logical consistency of the source database. Segments making up the outer and inner boundaries of a polygon tie end-to-end to completely enclose the area. All polygons were tested for closure. The Census Bureau uses its internally developed geographic update system to enhance and modify spatial and attribute data in the Census MAF/TIGER database. Standard geographic codes, such as INCITS (formerly FIPS) codes for states, counties, municipalities, county subdivisions, places, American Indian/Alaska Native/Native Hawaiian areas, and congressional districts are used when encoding spatial entities. The Census Bureau performed spatial data tests for logical consistency of the codes during the compilation of the original Census MAF/TIGER database files. Feature attribute information has been examined but has not been fully tested for consistency.
+
+For the cartographic boundary files, the Point and Vector Object Count for the G-polygon SDTS Point and Vector Object Type reflects the number of records in the file's data table. For multi-polygon features, only one attribute record exists for each multi-polygon rather than one attribute record per individual G-polygon component of the multi-polygon feature. Cartographic Boundary File multi-polygons are an exception to the G-polygon object type classification. Therefore, when multi-polygons exist in a file, the object count will be less than the actual number of G-polygons.</gco:CharacterString>
                </gmd:measureDescription>
                <gmd:result gco:nilReason="unknown"/>
             </gmd:DQ_ConceptualConsistency>
@@ -507,15 +431,15 @@ For the TIGER/Line Shapefiles, the Point and Vector Object Count for the G-polyg
                <gmd:processStep>
                   <gmd:LI_ProcessStep>
                      <gmd:description>
-                        <gco:CharacterString>TIGER/Line Shapefiles are extracted from the Census MAF/TIGER database by nation, state, county, and entity.  Census MAF/TIGER data for all of the aforementioned geographic entities are then distributed among the shapefiles each containing attributes for line, polygon, or landmark geographic data. </gco:CharacterString>
+                        <gco:CharacterString>Spatial data were extracted from the MAF/TIGER database and processed through a U.S. Census Bureau batch generalization system.</gco:CharacterString>
                      </gmd:description>
                      <gmd:dateTime>
-                        <gco:DateTime>2016-01-01T00:00:00</gco:DateTime>
+                        <gco:DateTime>2018-03-01T00:00:00</gco:DateTime>
                      </gmd:dateTime>
                      <gmd:source>
                         <gmd:LI_Source>
                            <gmd:description>
-                              <gco:CharacterString>online</gco:CharacterString>
+                              <gco:CharacterString>Geo-spatial Relational Database</gco:CharacterString>
                            </gmd:description>
                            <gmd:sourceCitation>
                               <gmd:CI_Citation>
@@ -525,21 +449,11 @@ For the TIGER/Line Shapefiles, the Point and Vector Object Count for the G-polyg
                                  <gmd:alternateTitle>
                                     <gco:CharacterString>MAF/TIGER</gco:CharacterString>
                                  </gmd:alternateTitle>
-                                 <gmd:date>
-                                    <gmd:CI_Date>
-                                       <gmd:date>
-                                          <gco:Date>201605</gco:Date>
-                                       </gmd:date>
-                                       <gmd:dateType>
-                                          <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                                               codeListValue="Publication Date">Publication Date</gmd:CI_DateTypeCode>
-                                       </gmd:dateType>
-                                    </gmd:CI_Date>
-                                 </gmd:date>
-                                 <gmd:citedResponsibleParty>
+                                 <gmd:date gco:nilReason="inapplicable"/>
+                                 <!--See the gmd:sourceExtent element below for the date range--><gmd:citedResponsibleParty>
                                     <gmd:CI_ResponsibleParty>
                                        <gmd:organisationName>
-                                          <gco:CharacterString>U.S. Department of Commerce, U.S. Census Bureau, Geography Division</gco:CharacterString>
+                                          <gco:CharacterString>U.S. Department of Commerce, U.S. Census Bureau, Geography Division, Geographic Customer Services Branch</gco:CharacterString>
                                        </gmd:organisationName>
                                        <gmd:role>
                                           <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
@@ -549,10 +463,24 @@ For the TIGER/Line Shapefiles, the Point and Vector Object Count for the G-polyg
                                     </gmd:CI_ResponsibleParty>
                                  </gmd:citedResponsibleParty>
                                  <gmd:otherCitationDetails>
-                                    <gco:CharacterString> Source Contribution: All line segments</gco:CharacterString>
+                                    <gco:CharacterString> Source Contribution: All spatial and feature data</gco:CharacterString>
                                  </gmd:otherCitationDetails>
                               </gmd:CI_Citation>
                            </gmd:sourceCitation>
+                           <gmd:sourceExtent>
+                              <gmd:EX_Extent>
+                                 <gmd:temporalElement>
+                                    <gmd:EX_TemporalExtent>
+                                       <gmd:extent>
+                                          <gml:TimePeriod gml:id="Cens201706">
+                                             <gml:beginPosition>201706</gml:beginPosition>
+                                             <gml:endPosition>201705</gml:endPosition>
+                                          </gml:TimePeriod>
+                                       </gmd:extent>
+                                    </gmd:EX_TemporalExtent>
+                                 </gmd:temporalElement>
+                              </gmd:EX_Extent>
+                           </gmd:sourceExtent>
                         </gmd:LI_Source>
                      </gmd:source>
                   </gmd:LI_ProcessStep>
@@ -573,8 +501,8 @@ For the TIGER/Line Shapefiles, the Point and Vector Object Count for the G-polyg
          <gmd:maintenanceNote>
             <gco:CharacterString>This was transformed from the Census Metadata Import Format</gco:CharacterString>
          </gmd:maintenanceNote>
-         <gmd:contact xlink:href="https://www.ngdc.noaa.gov/docucomp/B04DFA5D-40CD-B677-E040-0AC8C5BB4473"
-                      xlink:title=" U.S. Department of Commerce, U.S. Census Bureau, Geography Division, Spatial Data Collection and Products Branch(custodian)"/>
+         <gmd:contact xlink:href="https://www.ngdc.noaa.gov/docucomp/1df27e57-4768-42de-909b-52f530601fba"
+                      xlink:title="U.S Department of Commerce, U.S Census Bureau, Geographic Customer Services Branch (point of Contact)"/>
       </gmd:MD_MaintenanceInformation>
    </gmd:metadataMaintenance>
 </gmi:MI_Metadata>
