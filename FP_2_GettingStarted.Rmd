@@ -105,6 +105,25 @@ cdCompact <- read.csv("https://raw.githubusercontent.com/jeffreyshen19/Is-My-Dis
 ```
 
 
+4. Congressional District Raw Data - Area and Perimeter (but does not have comparable units with area and perimeter)
+
+```{r}
+
+congressDistrictRaw <- read.csv("Data/congressDistrictDataRaw.csv")
+
+#Remove rows that are not congressional districts
+
+congressDistrictRaw <- congressDistrictRaw %>%
+  filter(!is.na(district_name))
+
+#Calculate important metrics - unable to calculate Convex Hull and Reock w/o GIS - also, area and perimeter are in different units -- not sure which units -- this makes Polsby Popper and Schwartzberg calculations inaccurate. 
+
+congressDistrictRaw <- congressDistrictRaw %>%
+  mutate(Schwartzberg = (2*pi*sqrt(area/pi)) / (perimeter))
+
+```
+
+
 4. State Legislative Districts 
 
 - Columns: STATEFP, State, SLDLST, GEOID, NAMELSAD, Area, Perimeter, Polsby.Popper, Schwartzberg, Area.Convex.Hull, Reock
