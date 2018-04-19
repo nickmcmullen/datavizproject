@@ -249,6 +249,12 @@ We observe the 5 worst states in Polsby.Popper to be the same as the Schwartzber
 
 Research Question 2: Top 5 Gerrymandered Congressional Districts
 
+To help us understand how the compactness of Congressional districts is distributed generally, we made a histogram:
+```{r}
+ggplot(congressDistrictGerrymander, aes(x=compactness)) + geom_histogram()
+```
+This plot shows that district compactness is relatively normally distributed, with a peak near 0.3. This gives us a sense of where we expect would expect compactness to be for a typical district that isn't radically gerrymandered.
+
 
 ```{r}
 
@@ -269,7 +275,5 @@ States to investigate further and visualize:
 - Texas
 - Pennsylvania
 - Louisiana
-
-
 
 
