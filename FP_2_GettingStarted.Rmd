@@ -41,7 +41,7 @@ Lynda Chao, Nick McMullen, Justin Reis-Henrie, Hannah Schumway
 \textbf{Research Questions:}
 - Which states are, on average, most gerrymandered?
 - Which states contain the top 5 most gerrymandered congressional districts?
-- (Potential third research question) Which states contain the top 5 most gerryandered state legislature districts and which party controls those state legislatures?
+- (Potential third research question) Which states contain the top 5 most gerrymandered state legislature districts and which party controls those state legislatures?
 
 
 ##Data
