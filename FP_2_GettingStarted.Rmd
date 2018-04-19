@@ -131,6 +131,11 @@ congressDistrictRaw <- congressDistrictRaw %>%
 - Dimensions: 4825 observations 
 - Source: https://raw.githubusercontent.com/cicero-data/compactness-stats/master/2014-us/state_lower.csv
 
+```{r}
+
+districtGerrymander <- read.csv("Data/districtGerrymander.csv")
+
+```
 
 
 ##Initial Visualizations
@@ -216,6 +221,31 @@ grid.arrange(polsby_popper_map, schwartzberg_map, convex_hull_map, reock_map, nr
 
 ```
 
+
+Comparing 5 worst states for each metric:
+
+```{r}
+
+stateGerrymander %>%
+  arrange(Polsby.Popper) %>%
+  head(5)
+
+stateGerrymander %>%
+  arrange(Schwartzberg) %>%
+  head(5)
+
+stateGerrymander %>%
+  arrange(Convex.Hull) %>%
+  head(5)
+
+stateGerrymander %>%
+  arrange(Reock) %>%
+  head(5)
+
+```
+
+
+We observe the 5 worst states in Polsby.Popper to be the same as the Schwartzberg ratio. Convex-Hull and Reock, both measures of spread, differ in the worst 5 significantly. 
 
 Research Question 2: Top 5 Gerrymandered Congressional Districts
 
