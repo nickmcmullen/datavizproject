@@ -124,7 +124,7 @@ congressDistrictRaw <- congressDistrictRaw %>%
 ```
 
 
-4. State Legislative Districts 
+5. State Legislative Districts 
 
 - Columns: STATEFP, State, SLDLST, GEOID, NAMELSAD, Area, Perimeter, Polsby.Popper, Schwartzberg, Area.Convex.Hull, Reock
 - Limitations: data is from 2014 not from most recent redraw of state legislature districts 
@@ -217,7 +217,29 @@ grid.arrange(polsby_popper_map, schwartzberg_map, convex_hull_map, reock_map, nr
 ```
 
 
-Research Question 2: State level gerrymandering indices
+Research Question 2: Top 5 Gerrymandered Congressional Districts
+
+
+```{r}
+
+Worst10 <- congressDistrictRaw %>%
+  arrange(Schwartzberg) %>%
+  head(10)
+
+Worst10
+
+```
+
+
+States to investigate further and visualize:
+
+- North Carolina
+- Florida
+- Maryland 
+- Texas
+- Pennsylvania
+- Louisiana
+
 
 
 
