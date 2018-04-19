@@ -198,6 +198,7 @@ grid.arrange(polsby_popper_map, schwartzberg_map, convex_hull_map, reock_map, nr
 ```
 
 
+Research Question 2: State level gerrymandering indices
 
 
 
