@@ -96,7 +96,7 @@ stateGerrymander$Reock <- as.numeric(stateGerrymander$Reock)
 
 3. Congressional District Compactness Data:
 
-- PROBLEM: Doesn't have StateID or DistrictID to join.
+- PROBLEM: Doesn't have StateID or DistrictID to join with other data.
 
 ```{r}
 
@@ -116,7 +116,7 @@ congressDistrictRaw <- read.csv("Data/congressDistrictDataRaw.csv")
 congressDistrictRaw <- congressDistrictRaw %>%
   filter(!is.na(district_name))
 
-#Calculate important metrics - unable to calculate Convex Hull and Reock w/o GIS - also, area and perimeter are in different units -- not sure which units -- this makes Polsby Popper and Schwartzberg calculations inaccurate. 
+#Calculate important metrics - unable to calculate Convex Hull and Reock w/o GIS - also, area and perimeter are in different units -- not sure which units -- this makes Polsby Popper calculations inaccurate, but Schwartzberg relies on a mere ratio, which we can use. 
 
 congressDistrictRaw <- congressDistrictRaw %>%
   mutate(Schwartzberg = (2*pi*sqrt(area/pi)) / (perimeter))
