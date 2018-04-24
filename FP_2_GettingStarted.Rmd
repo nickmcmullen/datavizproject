@@ -1,6 +1,6 @@
 ---
 title: "FP 2"
-author: ""
+author: "Lynda Chao, Nick McMullen, Justin Reis-Henrie, Hannah Shumway"
 date: "April 24, 2018"
 output: html_document
 ---
@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 library(tidyverse)
 library(fiftystater)
@@ -27,7 +27,7 @@ Lynda Chao, Nick McMullen, Justin Reis-Henrie, Hannah Shumway
 ##Workflow
 
 - Hannah and Lynda: working with shapefiles and visualizations in GIS
-- Nick and Justin: working with visualizations and CSV data in RStudio
+- Nick and Justin: working with visualizations and CSV data in RStudio to help Hannah and Lynda pair the data in GIS
 - All together: compiling work into shared Google Drive poster
 
 - Meetings: Tuesday/Thursday at 11:30 AM
@@ -39,6 +39,7 @@ Lynda Chao, Nick McMullen, Justin Reis-Henrie, Hannah Shumway
 \textbf{Topic:} Gerrymandering Congressional Districts
 
 \textbf{Research Questions:}
+
 - Which states are, on average, most gerrymandered?
 - Which states contain the top 5 most gerrymandered congressional districts?
 - (Potential third research question) Which states contain the top 5 most gerrymandered state legislature districts and which party controls those state legislatures?
@@ -140,7 +141,7 @@ districtGerrymander <- read.csv("Data/districtGerrymander.csv")
 
 ##Initial Visualizations
 
-Research Question 1: State level gerrymandering indices
+### Research Question 1: State level gerrymandering indices
 
 
 ```{r}
@@ -247,22 +248,24 @@ stateGerrymander %>%
 
 We observe the 5 worst states in Polsby.Popper to be the same as the Schwartzberg ratio. Convex-Hull and Reock, both measures of spread, differ in the worst 5 significantly. 
 
-Research Question 2: Top 5 Gerrymandered Congressional Districts
+### Research Question 2: Top 5 Gerrymandered Congressional Districts
 
 To help us understand how the compactness of Congressional districts is distributed generally, we made a histogram:
+
 ```{r}
-ggplot(congressDistrictGerrymander, aes(x=compactness)) + geom_histogram()
+ggplot(congressDistrictRaw, aes(x=Schwartzberg)) + geom_histogram()
 ```
+
 This plot shows that district compactness is relatively normally distributed, with a peak near 0.3. This gives us a sense of where we expect would expect compactness to be for a typical district that isn't radically gerrymandered.
 
 
 ```{r}
 
-Worst10 <- congressDistrictRaw %>%
+Worst5 <- congressDistrictRaw %>%
   arrange(Schwartzberg) %>%
-  head(10)
+  head(5)
 
-Worst10
+Worst5
 
 ```
 
@@ -272,8 +275,24 @@ States to investigate further and visualize:
 - North Carolina
 - Florida
 - Maryland 
-- Texas
-- Pennsylvania
-- Louisiana
+- Hawaii
+
+![Map with worst districts by Schwartzberg index](DataSci_Map.jpg)
+
+
+We see that a district from Hawaii is included in this group. It is probably not reasonable to assume that a district in Hawaii is gerrymandered because the compactness index does not know that Hawaii is made up of a group of islands, so the district appears very spotty and purposefully drawn even though the boundaries are completely limited by the island boundaries. 
+
+Moving forward, we want to compare another gerrymandering index to Schwartzberg (either Convex-Hull or Reock) using these GIS maps and compare which districts are selected as the most gerrymandered. This should hopefully give us a better understanding of which index is better and which districts stand out as likely the most gerrymandered. 
+
+
+## Contributions
+
+- Nick: Gathered all of the necessary data on gerrymandering indices for joining with shapefiles for GIS visualization, worked on visualizations in ggplot, read up on blogs/literature to help with analysis, helped with development of research questions
+
+- Hannah: Joined CSV compactness data with GIS and worked on GIS visualizations, helped in discussion and development of research questions, found and formatted shapefiles data from Census website
+
+- Lynda: Joined CSV compactness data with GIS and worked on GIS visualizations, helped in discussion and development of research questions, found and formatted shapefiles data from Census website
+
+- Justin: Helped in discussion and development of research questions, worked on visualizations in ggplot, read up on blogs/literature to help with analysis
 
 
