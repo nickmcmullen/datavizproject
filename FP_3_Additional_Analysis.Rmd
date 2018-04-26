@@ -75,3 +75,12 @@ ggplot(subset(congressWRedistrict, !is.na(Redistrict)), aes(x=Redistrict, y=Schw
 
 ```
 
+
+
+```{r}
+
+ggplot(subset(congressWRedistrict, !is.na(Redistrict)), aes(x=Schwartzberg, fill=Redistrict)) +
+  geom_density(alpha=.6) + 
+  labs(title="Schwartzberg by State Legislature or Indep. Commission Redistricting")
+
+```
