@@ -1,0 +1,77 @@
+---
+title: "Secondary Data Analysis"
+author: "Nick McMullen"
+date: "April 26, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(fiftystater)
+library(gridExtra)
+library(sf)
+library(ggmap)
+
+```
+
+
+```{r}
+
+congressDistrictRaw <- read.csv("Data/congressDistrictDataRaw.csv")
+
+#Remove rows that are not congressional districts
+
+congressDistrictRaw <- congressDistrictRaw %>%
+  filter(!is.na(district_name))
+
+#Calculate important metrics - unable to calculate Convex Hull and Reock w/o GIS - also, area and perimeter are in different units -- not sure which units -- this makes Polsby Popper calculations inaccurate, but Schwartzberg relies on a mere ratio, which we can use. 
+
+congressDistrictRaw <- congressDistrictRaw %>%
+  mutate(Schwartzberg = (2*pi*sqrt(area/pi)) / (perimeter))
+
+```
+
+Add in redistricting data
+
+```{r}
+
+redistrict <- read.csv("Data/RedistrictProcedure.csv")
+
+```
+
+Join raw and redistrict
+
+```{r}
+
+congressWRedistrict <- congressDistrictRaw %>%
+  left_join(redistrict, by=c("state_name" = "State"))
+
+```
+
+
+Note: redistrict = 0 is state legislature, redistrict = 1 is independent commission
+
+
+```{r}
+
+ggplot(subset(redistrict, !is.na(Redistrict)), aes(x=Redistrict)) + 
+  geom_bar() + 
+  labs(title="Number of States by Redistricting Type")
+
+```
+
+```{r}
+
+ggplot(subset(congressWRedistrict, !is.na(Redistrict)), aes(x=Redistrict, y=Schwartzberg)) + 
+  geom_boxplot() + 
+  geom_point()
+  labs(title="Schwartzberg by State Legislature or Indep. Commission Redistricting")
+
+```
+
