@@ -76,10 +76,15 @@ ggplot(subset(redistrict, !is.na(Redistrict)), aes(x=Redistrict)) +
 
 ```{r}
 
-ggplot(subset(congressWRedistrict, !is.na(Redistrict)), aes(x=Redistrict, y=Schwartzberg)) + 
+ggplot(subset(main1, !is.na(Redistrict)), aes(x=Redistrict, y=Schwartzberg)) + 
   geom_boxplot() + 
   geom_point(alpha=.3)+
-  labs(title="Schwartzberg by State Legislature or Indep. Commission Redistricting")
+  labs(title="Schwartzberg by Redistricting Method")
+
+ggplot(subset(main1, !is.na(Redistrict)), aes(x=Redistrict, y=Ratio)) + 
+  geom_boxplot() + 
+  geom_point(alpha=.3)+
+  labs(title="Convex-Hull by Redistricting Method")
 
 ```
 
