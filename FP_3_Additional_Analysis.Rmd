@@ -23,6 +23,8 @@ library(ggmap)
 
 ```{r}
 
+stateGerrymander <- read.csv("Data/StateGerrymandering.csv")
+
 congressDistrictRaw <- read.csv("Data/congressDistrictDataRaw.csv")
 
 #Remove rows that are not congressional districts
@@ -82,5 +84,21 @@ ggplot(subset(congressWRedistrict, !is.na(Redistrict)), aes(x=Redistrict, y=Schw
 ggplot(subset(congressWRedistrict, !is.na(Redistrict)), aes(x=Schwartzberg, fill=Redistrict)) +
   geom_density(alpha=.6) + 
   labs(title="Schwartzberg by State Legislature or Indep. Commission Redistricting")
+
+```
+
+
+
+Ten Worst States for Schwartzberg and Convex-Hull
+
+```{r}
+
+stateGerrymander %>%
+  arrange(Schwartzberg) %>%
+  head(10)
+
+stateGerrymander %>%
+  arrange(Convex.Hull) %>%
+  head(10)
 
 ```
