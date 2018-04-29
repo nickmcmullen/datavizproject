@@ -27,6 +27,8 @@ stateGerrymander <- read.csv("Data/StateGerrymandering.csv")
 
 congressDistrictRaw <- read.csv("Data/congressDistrictDataRaw.csv")
 
+main <- read.csv("District Convex Ratio.csv")
+
 #Remove rows that are not congressional districts
 
 congressDistrictRaw <- congressDistrictRaw %>%
@@ -53,6 +55,10 @@ Join raw and redistrict
 
 congressWRedistrict <- congressDistrictRaw %>%
   left_join(redistrict, by=c("state_name" = "State"))
+
+
+main1 <- congressWRedistrict %>%
+  left_join(main, by=c("geography_id" = "GEOID_1"))
 
 ```
 
