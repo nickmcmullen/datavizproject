@@ -60,6 +60,9 @@ congressWRedistrict <- congressDistrictRaw %>%
 main1 <- congressWRedistrict %>%
   left_join(main, by=c("geography_id" = "GEOID_1"))
 
+main1 <- main1 %>%
+  mutate(Schwartzberg = Schwartzberg/100)
+
 ```
 
 
@@ -79,7 +82,7 @@ ggplot(subset(redistrict, !is.na(Redistrict)), aes(x=Redistrict)) +
 ggplot(subset(main1, !is.na(Redistrict)), aes(x=Redistrict, y=Schwartzberg)) + 
   geom_boxplot() + 
   geom_point(alpha=.3)+
-  labs(title="Schwartzberg by Redistricting Method")
+  labs(title="Schwartzberg by Redistricting Method") 
 
 ggplot(subset(main1, !is.na(Redistrict)), aes(x=Redistrict, y=Ratio)) + 
   geom_boxplot() + 
