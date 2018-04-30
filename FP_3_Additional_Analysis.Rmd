@@ -61,7 +61,9 @@ main1 <- congressWRedistrict %>%
   left_join(main, by=c("geography_id" = "GEOID_1"))
 
 main1 <- main1 %>%
-  mutate(Schwartzberg = Schwartzberg/100)
+  mutate(Schwartzberg = Schwartzberg/100) %>%
+  mutate(ConvexHull = Ratio) %>%
+  select(-c(id, STATE, LSAD, DIST_NAME, Schwartzbe, Ratio))
 
 ```
 
