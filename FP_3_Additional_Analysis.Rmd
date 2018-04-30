@@ -63,7 +63,9 @@ main1 <- congressWRedistrict %>%
 main1 <- main1 %>%
   mutate(Schwartzberg = Schwartzberg/100) %>%
   mutate(ConvexHull = Ratio) %>%
-  select(-c(id, STATE, LSAD, DIST_NAME, Schwartzbe, Ratio))
+  select(-c(id, STATE, LSAD, DIST_NAME, Schwartzbe, Ratio)) %>%
+  left_join(Party_Control_by_State_2018_Sheet1, by=c("state_name" = "State"))
+
 
 ```
 
