@@ -60,6 +60,10 @@ congressWRedistrict <- congressDistrictRaw %>%
 main1 <- congressWRedistrict %>%
   left_join(main, by=c("geography_id" = "GEOID_1"))
 
+#Add in state party control data
+
+Party_Control_by_State_2018_Sheet1 <- read.csv("Party Control by State 2018 - Sheet1.csv")
+
 main1 <- main1 %>%
   mutate(Schwartzberg = Schwartzberg/100) %>%
   mutate(ConvexHull = Ratio) %>%
@@ -88,13 +92,63 @@ ggplot(subset(main1, !is.na(Redistrict)), aes(x=Redistrict, y=Schwartzberg)) +
   geom_point(alpha=.3)+
   labs(title="Schwartzberg by Redistricting Method") 
 
-ggplot(subset(main1, !is.na(Redistrict)), aes(x=Redistrict, y=Ratio)) + 
+ggplot(subset(main1, !is.na(Redistrict)), aes(x=Redistrict, y=ConvexHull)) + 
   geom_boxplot() + 
   geom_point(alpha=.3)+
   labs(title="Convex-Hull by Redistricting Method")
 
 ```
 
+
+
+Bartlett Test for difference in group means:
+
+Schwartzberg:
+
+```{r}
+
+indep_commission_Schw <- main1 %>%
+  filter(Redistrict == "Independent commission") %>%
+  select(Schwartzberg)
+
+state_legis_Schw <- main1 %>%
+  filter(Redistrict == "State Legislature") %>%
+  select(Schwartzberg)
+
+politician_commission_Schw <- main1 %>%
+  filter(Redistrict == "Politician commission") %>%
+  select(Schwartzberg)
+
+t.test(indep_commission_Schw, state_legis_Schw)
+t.test(state_legis_Schw, politician_commission_Schw)
+t.test(indep_commission_Schw, politician_commission_Schw)
+
+```
+
+Convex-Hull
+
+```{r}
+
+
+indep_commission_CH <- main1 %>%
+  filter(Redistrict == "Independent commission") %>%
+  select(ConvexHull)
+
+state_legis_CH <- main1 %>%
+  filter(Redistrict == "State Legislature") %>%
+  select(ConvexHull)
+
+politician_commission_CH <- main1 %>%
+  filter(Redistrict == "Politician commission") %>%
+  select(ConvexHull)
+
+t.test(indep_commission_CH, state_legis_CH)
+t.test(state_legis_CH, politician_commission_CH)
+t.test(indep_commission_CH, politician_commission_CH)
+
+
+
+```
 
 
 ```{r}
