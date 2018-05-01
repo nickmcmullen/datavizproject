@@ -90,7 +90,8 @@ ggplot(subset(redistrict, !is.na(Redistrict)), aes(x=Redistrict)) +
 ggplot(subset(main1, !is.na(Redistrict)), aes(x=Redistrict, y=Schwartzberg)) + 
   geom_boxplot() + 
   geom_point(alpha=.3)+
-  labs(title="Schwartzberg by Redistricting Method") 
+  labs(title="Schwartzberg by Redistricting Method") + 
+  ylim(0,1)
 
 ggplot(subset(main1, !is.na(Redistrict)), aes(x=Redistrict, y=ConvexHull)) + 
   geom_boxplot() + 
